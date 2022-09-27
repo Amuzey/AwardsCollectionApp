@@ -14,6 +14,8 @@ struct CustomView: View {
             MouthView()
             LeftHandView()
             RightHandView()
+            LeftLegView()
+            RightLegView()
             EyeView()
         }
     }
@@ -111,6 +113,45 @@ struct RightHandView: View {
             path.move(to: CGPoint(x: 170, y: 90))
             path.addLine(to: CGPoint(x: 180, y: 45))
             path.addLine(to: CGPoint(x: 170, y: 20))
+        }
+        .stroke(.green, lineWidth: 5)
+        
+        Circle()
+            .frame(width: 10)
+            .offset(x: 67.5, y: -10)
+            .foregroundColor(.green)
+        Circle()
+            .frame(width: 10)
+            .offset(x: 70, y: -81)
+            .foregroundColor(.green)
+    }
+}
+
+struct LeftLegView: View {
+    var body: some View {
+        Path { path in
+            path.move(to: CGPoint(x: 80, y: 160))
+            path.addLine(to: CGPoint(x: 75, y: 180))
+            path.addLine(to: CGPoint(x: 75, y: 195))
+        }
+        .stroke(.green, lineWidth: 5)
+        
+        Circle()
+            .frame(width: 10)
+            .offset(x: -67.5)
+            .foregroundColor(.green)
+        Circle()
+            .frame(width: 10)
+            .offset(x: -80, y: 70)
+            .foregroundColor(.green)
+    }
+}
+struct RightLegView: View {
+    var body: some View {
+        Path { path in
+            path.move(to: CGPoint(x: 120, y: 160))
+            path.addLine(to: CGPoint(x: 125, y: 180))
+            path.addLine(to: CGPoint(x: 125, y: 195))
         }
         .stroke(.green, lineWidth: 5)
         
