@@ -1,5 +1,5 @@
 //
-//  CustomView.swift
+//  MikeView.swift
 //  AwardsCollectionApp
 //
 //  Created by Алексей on 26.09.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomView: View {
+struct MikeView: View {
     var body: some View {
         ZStack {
             BodyView()
@@ -21,9 +21,9 @@ struct CustomView: View {
     }
 }
 
-struct CustomView_Previews: PreviewProvider {
+struct MikeView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomView()
+        MikeView()
             .frame(width: 200, height: 200)
     }
 }
