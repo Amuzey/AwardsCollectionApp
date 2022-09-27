@@ -9,22 +9,34 @@ import SwiftUI
 
 struct MikeWazowski: View {
     
-    @State private var start = false
+    @State private var awardIsShowing = false
     
     var body: some View {
         VStack {
             Button(action: buttonAction) {
-                Text("Animation")
+                Text("Hey")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .frame(width: 180, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+                
             }
             Spacer()
-            MikeView(start: $start)
-                .frame(width: 200, height: 200)
+            
+            if awardIsShowing {
+                MikeView()
+                    .frame(width: 200, height: 200)
+                    .transition(.bounceAnimation)
+            }
         }
         .padding()
     }
     
     private func buttonAction() {
-        start.toggle()
+        withAnimation {
+            awardIsShowing.toggle()
+        }
     }
 }
 
@@ -33,3 +45,13 @@ struct MikeWazowski_Previews: PreviewProvider {
         MikeWazowski()
     }
 }
+
+extension AnyTransition {
+    static var bounceAnimation: AnyTransition {
+        let insertion = AnyTransition.move(edge: .top)
+        let removal = AnyTransition.move(edge: .bottom)
+        
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+

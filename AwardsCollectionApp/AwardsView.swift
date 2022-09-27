@@ -18,7 +18,7 @@ struct AwardsView: View {
                         .frame(width: 200, height: 200)
                     CurvesView()
                         .frame(width: 200, height: 200)
-                    MikeView(start: .constant(false))
+                    MikeView()
                         .frame(width: 200, height: 200)
                 }
             }

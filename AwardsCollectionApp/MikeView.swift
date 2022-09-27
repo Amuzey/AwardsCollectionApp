@@ -9,14 +9,12 @@ import SwiftUI
 
 struct MikeView: View {
     
-    @Binding var start: Bool
-    
     var body: some View {
         ZStack {
             BodyView()
             MouthView()
             LeftHandView()
-            RightHandView(start: $start)
+            RightHandView()
             LeftLegView()
             RightLegView()
             EyeView()
@@ -27,7 +25,7 @@ struct MikeView: View {
 
 struct MikeView_Previews: PreviewProvider {
     static var previews: some View {
-        MikeView(start: .constant(false))
+        MikeView()
             .frame(width: 200, height: 200)
     }
 }
@@ -112,8 +110,6 @@ struct LeftHandView: View {
 }
 
 struct RightHandView: View {
-    @Binding var start: Bool
-    
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 170, y: 90))
@@ -122,6 +118,7 @@ struct RightHandView: View {
         }
         .stroke(.green, lineWidth: 5)
         
+        
         Circle()
             .frame(width: 10)
             .offset(x: 67.5, y: -10)
@@ -129,8 +126,7 @@ struct RightHandView: View {
         Circle()
             .frame(width: 10)
             .foregroundColor(.green)
-            .offset(x: start ? 110 : 70, y: -81)
-            .animation(.easeInOut.repeatCount(5), value: start)
+            .offset(x: 70, y: -81)
     }
 }
 
