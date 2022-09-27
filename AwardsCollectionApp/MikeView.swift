@@ -27,7 +27,7 @@ struct MikeView: View {
 
 struct MikeView_Previews: PreviewProvider {
     static var previews: some View {
-        MikeView(start: .constant(true))
+        MikeView(start: .constant(false))
             .frame(width: 200, height: 200)
     }
 }
@@ -117,8 +117,8 @@ struct RightHandView: View {
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 170, y: 90))
-            path.addLine(to: CGPoint(x: start ? 200 : 180, y: 45))
-            path.addLine(to: CGPoint(x: start ? 210 : 170, y: 20))
+            path.addLine(to: CGPoint(x: 180, y: 45))
+            path.addLine(to: CGPoint(x: 170, y: 20))
         }
         .stroke(.green, lineWidth: 5)
         
@@ -128,8 +128,9 @@ struct RightHandView: View {
             .foregroundColor(.green)
         Circle()
             .frame(width: 10)
-            .offset(x: start ? 110 : 70, y: -81)
             .foregroundColor(.green)
+            .offset(x: start ? 110 : 70, y: -81)
+            .animation(.easeInOut.repeatCount(5), value: start)
     }
 }
 

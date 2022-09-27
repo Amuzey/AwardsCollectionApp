@@ -24,9 +24,7 @@ struct MikeWazowski: View {
     }
     
     private func buttonAction() {
-        withAnimation {
-            start.toggle()
-        }
+        start.toggle()
     }
 }
 
