@@ -17,6 +17,8 @@ struct MikeView: View {
             LeftLegView()
             RightLegView()
             EyeView()
+
+            EarsView()
         }
     }
 }
@@ -136,14 +138,11 @@ struct LeftLegView: View {
         }
         .stroke(.green, lineWidth: 5)
         
-        Circle()
-            .frame(width: 10)
-            .offset(x: -67.5)
-            .foregroundColor(.green)
-        Circle()
-            .frame(width: 10)
-            .offset(x: -80, y: 70)
-            .foregroundColor(.green)
+        Path { path in
+            path.move(to: CGPoint(x: 77, y: 195))
+            path.addQuadCurve(to: CGPoint(x: 55, y: 195), control: CGPoint(x: 55, y: 180))
+        }
+        .fill(.green)
     }
 }
 struct RightLegView: View {
@@ -155,14 +154,11 @@ struct RightLegView: View {
         }
         .stroke(.green, lineWidth: 5)
         
-        Circle()
-            .frame(width: 10)
-            .offset(x: 67.5, y: -10)
-            .foregroundColor(.green)
-        Circle()
-            .frame(width: 10)
-            .offset(x: 70, y: -81)
-            .foregroundColor(.green)
+        Path { path in
+            path.move(to: CGPoint(x: 123, y: 195))
+            path.addQuadCurve(to: CGPoint(x: 145, y: 195), control: CGPoint(x: 145, y: 180))
+        }
+        .fill(.green)
     }
 }
 
@@ -185,6 +181,24 @@ struct BodyView: View {
                 endAngle: .degrees(-50),
                 clockwise: true
             )
+        }
+        .fill(.green)
+    }
+}
+
+struct EarsView: View {
+    var body: some View {
+        Path { path in
+            path.move(to: CGPoint(x: 50, y: 50))
+            path.addLine(to: CGPoint(x: 50, y: 30))
+            path.addLine(to: CGPoint(x: 65, y: 35))
+        }
+        .fill(.green)
+        
+        Path { path in
+            path.move(to: CGPoint(x: 115, y: 30))
+            path.addLine(to: CGPoint(x: 125, y: 20))
+            path.addLine(to: CGPoint(x: 132, y: 38))
         }
         .fill(.green)
     }
