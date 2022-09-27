@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct MikeView: View {
+    
+    @Binding var start: Bool
+    
     var body: some View {
         ZStack {
             BodyView()
             MouthView()
             LeftHandView()
-            RightHandView()
+            RightHandView(start: $start)
             LeftLegView()
             RightLegView()
             EyeView()
-
             EarsView()
         }
     }
@@ -25,7 +27,7 @@ struct MikeView: View {
 
 struct MikeView_Previews: PreviewProvider {
     static var previews: some View {
-        MikeView()
+        MikeView(start: .constant(true))
             .frame(width: 200, height: 200)
     }
 }
@@ -92,7 +94,7 @@ struct MouthView: View {
 struct LeftHandView: View {
     var body: some View {
         Path { path in
-            path.move(to: CGPoint(x: 30, y: 100))
+            path.move(to: CGPoint(x: 30, y: 99))
             path.addLine(to: CGPoint(x: 20, y: 145))
             path.addLine(to: CGPoint(x: 20, y: 170))
         }
@@ -110,11 +112,13 @@ struct LeftHandView: View {
 }
 
 struct RightHandView: View {
+    @Binding var start: Bool
+    
     var body: some View {
         Path { path in
             path.move(to: CGPoint(x: 170, y: 90))
-            path.addLine(to: CGPoint(x: 180, y: 45))
-            path.addLine(to: CGPoint(x: 170, y: 20))
+            path.addLine(to: CGPoint(x: start ? 200 : 180, y: 45))
+            path.addLine(to: CGPoint(x: start ? 210 : 170, y: 20))
         }
         .stroke(.green, lineWidth: 5)
         
@@ -124,7 +128,7 @@ struct RightHandView: View {
             .foregroundColor(.green)
         Circle()
             .frame(width: 10)
-            .offset(x: 70, y: -81)
+            .offset(x: start ? 110 : 70, y: -81)
             .foregroundColor(.green)
     }
 }

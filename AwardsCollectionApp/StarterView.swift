@@ -10,6 +10,12 @@ import SwiftUI
 struct StarterView: View {
     var body: some View {
         TabView {
+            MikeWazowski()
+                .tabItem {
+                    Image(systemName: "theatermasks")
+                    Text("Mike")
+                }
+            
             MainView()
                 .tabItem {
                     Image(systemName: "rosette")

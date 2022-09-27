@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A0B583228E3378300F85877 /* MikeWazowski.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0B583128E3378300F85877 /* MikeWazowski.swift */; };
 		8AE0CD6428E1B7C500BA7680 /* MikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE0CD6328E1B7C500BA7680 /* MikeView.swift */; };
 		A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */; };
 		A89D0933267B76D400C1FB66 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D0932267B76D400C1FB66 /* MainView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A0B583128E3378300F85877 /* MikeWazowski.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeWazowski.swift; sourceTree = "<group>"; };
 		8AE0CD6328E1B7C500BA7680 /* MikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MikeView.swift; sourceTree = "<group>"; };
 		A89D092D267B76D400C1FB66 /* AwardsCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwardsCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AwardsCollectionAppApp.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				A89D093F267B777E00C1FB66 /* StarterView.swift */,
 				A89D0932267B76D400C1FB66 /* MainView.swift */,
 				A8A20B562837907D00C7401B /* CartRacingView.swift */,
+				8A0B583128E3378300F85877 /* MikeWazowski.swift */,
 				A89D0941267B77C800C1FB66 /* AwardsView.swift */,
 				A8E1B482267B7972005E98AA /* GradientRectangles.swift */,
 				8AE0CD6328E1B7C500BA7680 /* MikeView.swift */,
@@ -165,6 +168,7 @@
 				8AE0CD6428E1B7C500BA7680 /* MikeView.swift in Sources */,
 				A89D0933267B76D400C1FB66 /* MainView.swift in Sources */,
 				A8E1B485267B7979005E98AA /* PathView.swift in Sources */,
+				8A0B583228E3378300F85877 /* MikeWazowski.swift in Sources */,
 				A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */,
 				A89D0940267B777E00C1FB66 /* StarterView.swift in Sources */,
 				A8E1B483267B7972005E98AA /* GradientRectangles.swift in Sources */,
